@@ -3,23 +3,23 @@ document.addEventListener("DOMContentLoaded", function () {
   var title = "Accounts";
 
   var accountsData= [
+    ["data1", "data2", "data3", "data4", "data5", "data14", "data7", "data8", "data9", "data10", "data11", "data12", "data13", "data14", "data15", "data16"],
+    ["data1", "data2", "data3", "data4", "data5", "data6", "data7", "data8", "data9", "data10", "data11", "data12", "data13", "data14", "data15", "data16"],
+    ["data1", "data2", "data3", "data34", "data5", "data66", "data7", "data8", "data9", "data10", "data11", "data12", "data13", "data14", "data15", "data16"],
+    ["data1", "data2", "data3", "data4", "data5", "data6", "data7", "data85", "data9", "data10", "data11", "data12", "data13", "data14", "data15", "data16"],
+    ["data1", "data2", "data3", "data4", "data5", "data6", "data7", "data8", "data9", "data10", "data11", "data12", "data13", "data14", "data15", "data16"],
+    ["data1", "data2", "data3", "data4", "data5", "data6", "data7", "data19", "data9", "data10", "data11", "data12", "data13", "data14", "data15", "data16"],
+    ["data1", "data2", "data3", "data4", "data5", "data6", "data7", "data8", "data9", "data10", "data11", "data12", "data13", "data14", "data15", "data16"],
+    ["data1", "data20", "data3", "data4", "data5", "data6", "data7", "data8", "data9", "data10", "data11", "data12", "data13", "data14", "data15", "data16"],
+    ["data1", "data2", "data3", "data4", "data5", "data6", "data7", "data8", "data9", "data10", "data11", "data12", "data13", "data14", "data15", "data16"],
+    ["data1", "data2", "data3", "data4", "data5", "data6", "data7", "data8", "data9", "data10", "data11", "data12", "data13", "data14", "data15", "data16"],
+    ["data16", "data2", "data3", "data4", "data5", "data6", "data7", "data8", "data9", "data10", "data11", "data12", "data13", "data14", "data15", "data16"],
     ["data1", "data2", "data3", "data4", "data5", "data6", "data7", "data8", "data9", "data10", "data11", "data12", "data13", "data14", "data15", "data16"],
     ["data1", "data2", "data3", "data4", "data5", "data6", "data7", "data8", "data9", "data10", "data11", "data12", "data13", "data14", "data15", "data16"],
     ["data1", "data2", "data3", "data4", "data5", "data6", "data7", "data8", "data9", "data10", "data11", "data12", "data13", "data14", "data15", "data16"],
-    ["data1", "data2", "data3", "data4", "data5", "data6", "data7", "data8", "data9", "data10", "data11", "data12", "data13", "data14", "data15", "data16"],
-    ["data1", "data2", "data3", "data4", "data5", "data6", "data7", "data8", "data9", "data10", "data11", "data12", "data13", "data14", "data15", "data16"],
-    ["data1", "data2", "data3", "data4", "data5", "data6", "data7", "data8", "data9", "data10", "data11", "data12", "data13", "data14", "data15", "data16"],
-    ["data1", "data2", "data3", "data4", "data5", "data6", "data7", "data8", "data9", "data10", "data11", "data12", "data13", "data14", "data15", "data16"],
-    ["data1", "data2", "data3", "data4", "data5", "data6", "data7", "data8", "data9", "data10", "data11", "data12", "data13", "data14", "data15", "data16"],
-    ["data1", "data2", "data3", "data4", "data5", "data6", "data7", "data8", "data9", "data10", "data11", "data12", "data13", "data14", "data15", "data16"],
-    ["data1", "data2", "data3", "data4", "data5", "data6", "data7", "data8", "data9", "data10", "data11", "data12", "data13", "data14", "data15", "data16"],
-    ["data1", "data2", "data3", "data4", "data5", "data6", "data7", "data8", "data9", "data10", "data11", "data12", "data13", "data14", "data15", "data16"],
-    ["data1", "data2", "data3", "data4", "data5", "data6", "data7", "data8", "data9", "data10", "data11", "data12", "data13", "data14", "data15", "data16"],
-    ["data1", "data2", "data3", "data4", "data5", "data6", "data7", "data8", "data9", "data10", "data11", "data12", "data13", "data14", "data15", "data16"],
-    ["data1", "data2", "data3", "data4", "data5", "data6", "data7", "data8", "data9", "data10", "data11", "data12", "data13", "data14", "data15", "data16"],
-    ["data1", "data2", "data3", "data4", "data5", "data6", "data7", "data8", "data9", "data10", "data11", "data12", "data13", "data14", "data15", "data16"],
-    ["data1", "data2", "data3", "data4", "data5", "data6", "data7", "data8", "data9", "data10", "data11", "data12", "data13", "data14", "data15", "data16"],
-    ["data1", "data2", "data3", "data4", "data5", "data6", "data7", "data8", "data9", "data10", "data11", "data12", "data13", "data14", "data15", "data16"],
+    ["data1", "data29", "data3", "data4", "data5", "data6", "data7", "data8", "data99", "data10", "data11", "data192", "data13", "data14", "data15", "data16"],
+    ["data1", "data2", "data3", "data4", "data5", "data6", "data7", "data8", "data9", "data107", "data11", "data12", "data13", "data14", "data15", "data16"],
+    ["data1", "data2", "data3", "data4", "data5", "data6", "data7", "data86", "data9", "data10", "data11", "data12", "data13", "data14", "data15", "data16"],
 
   ];
 
@@ -47,11 +47,11 @@ document.addEventListener("DOMContentLoaded", function () {
   var titleDiv = $(`<div class="dt-layout-cell dt-start"><h2 class="dt-length">${title}</h2></div>`);
   $('.dt-layout-row .dt-start:first').after(titleDiv);
 
-// // Add title between dt-layout-cell dt-start and dt-layout-cell dt-end
-// var title = $('<h2>').text('Your Title Here'); // Create a new <h2> element with your title
-// var wrapper = $('<div>').addClass('dt-layout-cell dt-start'); // Create a wrapper div with class dt-layout-cell dt-start
-// wrapper.append(title); // Append the title to the wrapper div
-// $('#myTable_wrapper .dt-layout-row .dt-start').append(wrapper); // Prepend the wrapper div to the DataTable wrapper
+  
+// var title = $('<h2>').text('Your Title Here');
+// var wrapper = $('<div>').addClass('dt-layout-cell dt-start'); 
+// wrapper.append(title); 
+// $('#myTable_wrapper .dt-layout-row .dt-start').append(wrapper); 
 
 
 
