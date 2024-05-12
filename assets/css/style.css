@@ -297,7 +297,9 @@ table {
   background: #667eea !important;
   border: 1px solid transparent !important;
 }
-
+h2.dt-length{
+  text-align: center;
+}
 
 @media (min-width: 575px) {
   .container {
