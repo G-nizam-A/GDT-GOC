@@ -297,8 +297,94 @@ table {
   background: #667eea !important;
   border: 1px solid transparent !important;
 }
-h2.dt-length{
+
+h2.dt-length {
   text-align: center;
+}
+
+
+div.dt-info,
+h2.dt-info {
+  text-align: center;
+}
+
+div.dt-search {
+  float: left;
+}
+
+div.dt-length {
+  float: right;
+}
+
+div.dt-paging {
+  clear: both;
+  text-align: center;
+  margin-top: 0.5em;
+}
+
+
+/* pop container */
+
+.popup-container {
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  transform: scale(1.3);
+  position: fixed;
+  z-index: 3;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(17, 17, 17, 0.61);
+  display: flex;
+  align-items: center;
+}
+
+.popup-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+}
+
+.popup-content p {
+  font-size: 17px;
+  padding: 10px;
+  line-height: 20px;
+}
+
+.popup-content a.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  background: none;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+
+.popup-content a.close:hover {
+  color: #333;
+}
+
+.popup-content span:hover,
+.popup-content span:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.popup-container:target {
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.popup-container h3 {
+  margin: 10px;
 }
 
 @media (min-width: 575px) {

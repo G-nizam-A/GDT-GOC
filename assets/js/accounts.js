@@ -1,38 +1,17 @@
-import { accountsData, title } from "./accountData.js";
+import { accountsData, title } from './accountData.js';
 
 document.addEventListener("DOMContentLoaded", function () {
-  $("#myTable").DataTable({
-    dom: 'Bfrtip',
-    buttons: [
-      {
-        extend: 'excelHtml5',
-        text: 'Export Excel',
-        exportOptions: {
-          columns: ':visible',
-          format: {
-            body: function (data, row, column, node) {
-              const anchorTags = $(node).find('a');
-              if (anchorTags.length) {
-                const links = anchorTags.map(function() { return $(this).attr('href'); }).get().join(', ');
-                return links;
-              }
-              return data;
-            }
-          }
-        }
-      }
-    ],
-    layout: {
-      topStart: {
-        buttons: ["copyHtml5", "excelHtml5", "csvHtml5", "pdfHtml5"],
-      },
-    },
-    language: { searchPlaceholder: "Search..." },
-    lengthMenu: [
-      [8, 18, 30, -1],
-      [7, 18, 30, "All"],
-    ],
-    fixedColumns: { start: 1 },
+
+  let table = $("#myTable").DataTable({
+    language: { searchPlaceholder: "Search...", },
+    dom: '<"dt-buttons"Bf><"clear">lirtp',
+  // layout: {
+  //     topStart: {
+  //         buttons: ['copy', 'csv', 'excel', 'pdf', 'print']
+  //     }
+  // },
+  lengthMenu: [[8, 18, 30, -1], [8, 18, 30, "All"]],
+    fixedColumns: { start: 1, },
     paging: true,
     scrollCollapse: true,
     scrollX: true,
@@ -43,24 +22,12 @@ document.addEventListener("DOMContentLoaded", function () {
     columns: [
       { data: "Customer Name" },
       { data: "AM" },
-      
       { data: "CEM" },
       { data: "DM" },
       {
-        data: "RFQ",
+        data: "RFQ.Value",
         render: function (data, type, row) {
-          let dropdown = `
-            <div class="dropdown">
-              <button class=" dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                ${data.Name}
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          `;
-          data.Links.forEach((link) => {
-            dropdown += `<a class="dropdown-item" href="${link.url}" target="_blank">${link.text}</a>`;
-          });
-          dropdown += `</div></div>`;
-          return dropdown;
+          return '<a href="' + row["RFQ"]["Link"] + '">' + data + "</a>";
         },
       },
       {
@@ -150,8 +117,58 @@ document.addEventListener("DOMContentLoaded", function () {
 
   $(".dt-search label").remove();
 
-  var titleDiv = $(
-    `<div class="dt-layout-cell dt-start"><h2 class="dt-length">${title}</h2></div>`
-  );
-  $(".dt-layout-row .dt-start:first").after(titleDiv);
+  // accountsData.forEach(function(row) {
+  //   table.row.add(row).draw();
+  // });
+
+  // var titleDiv = $(
+  //   `<div class="dt-layout-cell dt-start"><h2 class="dt-length">${title}</h2></div>`
+  // );
+  // $(".dt-layout-row .dt-start:first").after(titleDiv);
+
+  // $(".dt-info h2").text(title);
+  
+  var h2Element = $('<h2></h2>').addClass('dt-info').text(title);
+  $('.dt-info').replaceWith(h2Element);
+
+  // var title = $('<h2>').text('Your Title Here');
+  // var wrapper = $('<div>').addClass('dt-layout-cell dt-start');
+  // wrapper.append(title);
+  // $('#myTable_wrapper .dt-layout-row .dt-start').append(wrapper);
+
+
+    var popupContent = `
+    <div id="" class="popup-container">
+      <div class="popup-content">
+        <a href="#" class="close">&times;</a>
+        <h3></h3>
+        <div></div>
+      </div>
+    </div>`;
+
+  $('body').append(popupContent);
+
+  $('#myTable').on('click', 'td', function(e) {
+    let rowData = table.row($(this).parents('tr')).data();
+    let cellName = table.column($(this).closest('td')).header().textContent.trim();
+
+  
+    if (rowData && rowData[cellName] && rowData[cellName].Link) {
+      let link = rowData[cellName].Link;
+      if (rowData[cellName].data) {
+        console.log("Data:", rowData[cellName].data);
+        $('.popup-content h3').text(cellName); 
+        let dataList = '<ul>'; 
+        rowData[cellName].data.forEach(item => {
+          dataList += '<li><a href="' + item + '">' + item + '</a></li>';
+        });
+        dataList += '</ul>';
+        $('.popup-content').find('div').html(dataList);
+      }
+
+      $('.popup-container').attr('id', link.substring(1));
+    }
+  });
+    
+
 });
