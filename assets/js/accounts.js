@@ -160,7 +160,7 @@ document.addEventListener("DOMContentLoaded", function () {
         $('.popup-content h3').text(cellName); 
         let dataList = '<ul>'; 
         rowData[cellName].data.forEach(item => {
-          dataList += '<li><a href="' + item + '">' + item + '</a></li>';
+          dataList += '<li><a href="' + item + '" target="_blank">' + item + '</a></li>';
         });
         dataList += '</ul>';
         $('.popup-content').find('div').html(dataList);
